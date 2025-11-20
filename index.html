@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kissaten</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+
+</head>
+<body>
+
+    <header>
+        <nav class="header">
+            <figure class="logo" id="logo">
+                <img src="img/logo.png" alt="Logo Kissaten">
+            </figure>
+            <a href="#home">Inicio</a>
+            <a href="#menu">Menú</a>
+            <a href="#about">Sobre nosotros</a>
+            <a href="#contact">Contáctanos</a>
+        </nav>
+    </header>
+
+    <!--Home-->
+    <section class="home" id="home">
+        <section class="contenedor-home">
+            <a href="#menu" class="menu-btn">Menu</a>
+        </section>
+    </section>
+    <!--final home-->
+
+    <!--galeria-->
+    <section class="menu" id="menu">
+
+        <section class="titulo">
+                <h1>Menú</h1>
+        </section>
+            
+        <section class="galeria">
+
+            <figure class="item">
+                <span>Latte</span>
+                <img src="img/i2.jpg" alt="imagen1">
+            </figure>
+
+            <figure class="item">
+                <span>Hotcake</span>
+                <img src="img/i3.jpg" alt="imagen2">
+            </figure>
+
+            <figure class="item">
+                <span>Matcha</span>
+                <img src="img/i4.jpg" alt="imagen3">
+            </figure>
+
+            <figure class="item">
+                <span>Chai</span>
+                <img src="img/i5.jpg" alt="imagen4">
+            </figure>
+
+            <figure class="item">
+                <span>Pudding</span>
+                <img src="img/i6.jpg" alt="imagen5">
+            </figure>
+
+            <figure class="item">
+                <span>Tortitas</span>
+                <img src="img/i7.jpg" alt="imagen7">
+            </figure>
+
+        </section>
+    </section>
+    <!--final galeria-->
+
+    <!--about-->
+    <article class="about" id="about">
+
+        <figure class="i3d1" id="i3d1">
+            <img src="img/3d1.png" alt="3dpng_1">
+        </figure>
+
+        <figure class="i3d2" id="i3d2"> 
+            <img src="img/3d2.png" alt="3dpng-2">
+        </figure>
+
+        <section class="about-bg">
+            <article class="texto-about">
+                <h1>Sobre nosotros</h1>
+                <p>Kissaten es un pequeño rincón creado para quienes aman las cosas bonitas. <br>
+                Creamos bebidas y postres inspirados en personajes adorables, sabores japoneses y un ambiente que te abraza desde que entras por la puerta. <br>
+
+                Nuestro objetivo es simple: hacerte sonreír. <br>
+                Cada latte con arte kawaii, cada hotcake con forma de animalito y cada detalle del local está pensado para hacer de tu visita un momento tierno y memorable. <br>
+
+                En Kissaten la magia está en lo pequeño.</p>
+            </article>
+        </section>
+    </article>
+    <!--about final-->
+
+    <!--contact us-->
+    <section id="contact">
+        <section class="contact-caja">
+            <form action="base.php" method="post">
+                
+                <fieldset>
+                    <legend>Contáctanos</legend>
+
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+                    <label for="email">Correo electrónico: </label>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@gmail.com" required>
+
+                    <label for="mensaje">Mensaje: </label>
+                    <textarea name="mensaje" id="mensaje" rows="10" cols="10" placeholder="Escribe tu mensaje..." required></textarea>
+                    
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+</section>
+    <!--contact us final-->
+
+    <!--footer-->
+    <footer>
+        <nav class="referencias">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About us</a>
+            <a href="#contact">Contact us</a>
+        </nav>
+
+        <section class="direccion">
+            <h3>Encuéntranos en: </h3>
+            <p>c/Los capuchinos 35</p>
+        </section>
+
+        <section class="contactanos">
+            <h3>Contáctanos en</h3>
+            <p>kissatencafe@gmail.com</p>
+            <p>SXX XXX XXX XX</p>
+        </section>
+
+        <section class="footer-bottom">
+            <p>© 2025 Kissaten. Alliumcep4</p>
+        </section>
+
+    </footer>
+    <!--footer final-->
+    
+</body>
+</html>
