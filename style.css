@@ -1,5 +1,6 @@
 :root {
-            --color-fondo: #f5f0e6;
+            --fondo-blanco: #ffffff;   
+            --fondo-crema: #f5f0e6;
             --color-principal: #6b4c3b;
             --color-secundario: #a6785b;
             --color-acento: #d9a066;
@@ -9,7 +10,6 @@
 
         body {
             font-family: 'Mochiy Pop One', sans-serif;
-            background-color: var(--color-fondo);
             color: var(--color-texto);
         }
 
@@ -59,6 +59,7 @@
             background-size: cover;
             background-position: center;
             padding: 40px;
+            background-color: var(--fondo-blanco);
         }
         .menu-btn {
             padding: 15px 40px;
@@ -85,6 +86,10 @@
         }
 
         /* Cards del menú */
+        #menu-section{
+            background-color: var(--fondo-crema); 
+            padding: 5rem 2rem;
+        }
         .card {
             border: 2px dotted var(--color-acento);
             border-radius: 100px;
@@ -105,37 +110,99 @@
 
         /* About */
         .about-bg {
-            background: var(--color-fondo);
+        background: var(--color-fondo);
+        padding: 4rem 2rem 6rem; 
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
         }
+
         .about-bg h1 {
             color: var(--color-texto);
         }
+
         .caja-about {
-            background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-secundario) 100%);
+            background: linear-gradient(135deg, rgb(228, 200, 173) 0%, rgb(202, 153, 115) 100%);
             color: var(--color-texto);
-            padding: 50px 0;
-            position: relative;
+            padding: 40px;
+            position: relative; 
+            overflow: visible;
+            border-radius: 1.5rem;
         }
+
         .caja-about p {
             font-size: 0.95rem;
             line-height: 1.8;
         }
 
-        /* Contact */
+        .caja-about .about-image {
+            position: absolute;
+            top: 40%;
+            right: 100px; 
+            transform: translateY(-50%);
+            max-width: 500px;
+            height: auto;
+            border-radius: 1rem;
+        }
+
+        /*Eslogan */
+        .eslogan-box {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .eslogan-texto {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-weight: 500;
+            margin: 0;
+        }
+        .quote {
+            position: absolute;
+            font-size: 6rem;
+            font-weight: bold;
+            color: var(--color-acento);
+            opacity: 1;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .quote-left {
+            top: 0;
+            left: 0;
+            transform: translate(-30%, -30%) rotate(-15deg);
+        }
+
+        .text-caramelo {
+            font-weight: bold;
+            color: var(--color-acento);
+            }
+
+        .quote-right {
+            bottom: 0;
+            right: 0;
+            transform: translate(30%, 30%) rotate(15deg);
+        }
+
+        #contact {
+    background-color: var(--fondo-crema); 
+        }
+
         .contact-caja fieldset {
+            background-color: #ffffff;
             border: 3px solid var(--color-acento); 
             border-radius: 15px;                  
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background-color: #ede6d9;
-        }        
-
-        .form-label {
-            color: var(--color-principal);
-            font-weight: bold;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
         .form-control {
+            background-color: #ffffff; 
             border: 2px solid var(--color-acento);
             border-radius: 10px;
             padding: 0.5rem;
