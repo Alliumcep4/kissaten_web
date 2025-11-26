@@ -1,157 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kissaten</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/logo.png">
-
-
+    <link rel="icon" type="image/png" href="img/logo_v2.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="header">
-            <figure class="logo" id="logo">
-                <img src="img/logo.png" alt="Logo Kissaten">
-            </figure>
-            <a href="#home">Inicio</a>
-            <a href="#menu">Menú</a>
-            <a href="#about">Sobre nosotros</a>
-            <a href="#contact">Contáctanos</a>
-        </nav>
-    </header>
+    <!--ap barra_navegación (en terminología profesional se le llamará: navbar)-->
+    <nav class="navbar navbar-expand-lg navbar-dark"> <!--nav == para encapuslar elementos de navegación-->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo_v2.png" alt="logo_Kissaten">
+            </a>
+            <!--Rec: el toogler hace que cuando la pantalla se hace más chiqui los elementos de la navbar salgan como en un menú
+            hamburguesa y así no se deforme. Es lo que sale cuando se adapta de dispos de por ej 1920 x 1080 a móviles. -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu-section">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--final barra_navegación-->
 
-    <!--Home-->
+    <!--ap home-->
     <section class="home" id="home">
-        <section class="contenedor-home">
-            <a href="#menu" class="menu-btn">Menu</a>
-        </section>
+        <a href="#menu-section" class="menu-btn">Menú</a>
     </section>
     <!--final home-->
 
-    <!--galeria-->
-    <section class="menu" id="menu">
+    <!--ap menu-->
+    <section class="py-5" id="menu-section">
+        <div class="container">
+            <div class="linea-vertical"></div>
+            <h1 class="text-center mb-2">Menú</h1>
+            <p class="text-center subtitulo mb-5">Nuestras especialidades</p>
 
-        <section class="titulo">
-                <h1>Menú</h1>
-        </section>
-            
-        <section class="galeria">
+            <!--item 1-->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i2.jpg" class="card-img-top" alt="Latte">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Latte</h5>
+                        </div>
+                    </div>
+                </div>
 
-            <figure class="item">
-                <span>Latte</span>
-                <img src="img/i2.jpg" alt="imagen1">
-            </figure>
+                <!--item 2-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i3.jpg" class="card-img-top" alt="Hotcake">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Hotcake</h5>
+                        </div>
+                    </div>
+                </div>
 
-            <figure class="item">
-                <span>Hotcake</span>
-                <img src="img/i3.jpg" alt="imagen2">
-            </figure>
+                <!--item 3-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i4.jpg" class="card-img-top" alt="Matcha">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Matcha</h5>
+                        </div>
+                    </div>
+                </div>
 
-            <figure class="item">
-                <span>Matcha</span>
-                <img src="img/i4.jpg" alt="imagen3">
-            </figure>
-
-            <figure class="item">
-                <span>Chai</span>
-                <img src="img/i5.jpg" alt="imagen4">
-            </figure>
-
-            <figure class="item">
-                <span>Pudding</span>
-                <img src="img/i6.jpg" alt="imagen5">
-            </figure>
-
-            <figure class="item">
-                <span>Tortitas</span>
-                <img src="img/i7.jpg" alt="imagen7">
-            </figure>
-
-        </section>
-    </section>
-    <!--final galeria-->
-
-    <!--about-->
-    <article class="about" id="about">
-
-        <figure class="i3d1" id="i3d1">
-            <img src="img/3d1.png" alt="3dpng_1">
-        </figure>
-
-        <figure class="i3d2" id="i3d2"> 
-            <img src="img/3d2.png" alt="3dpng-2">
-        </figure>
-
-        <section class="about-bg">
-            <article class="texto-about">
-                <h1>Sobre nosotros</h1>
-                <p>Kissaten es un pequeño rincón creado para quienes aman las cosas bonitas. <br>
-                Creamos bebidas y postres inspirados en personajes adorables, sabores japoneses y un ambiente que te abraza desde que entras por la puerta. <br>
-
-                Nuestro objetivo es simple: hacerte sonreír. <br>
-                Cada latte con arte kawaii, cada hotcake con forma de animalito y cada detalle del local está pensado para hacer de tu visita un momento tierno y memorable. <br>
-
-                En Kissaten la magia está en lo pequeño.</p>
-            </article>
-        </section>
-    </article>
-    <!--about final-->
-
-    <!--contact us-->
-    <section id="contact">
-        <section class="contact-caja">
-            <form action="base.php" method="post">
+                <!--item 4-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i5.jpg" class="card-img-top" alt="Chai">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Chai</h5>
+                        </div>
+                    </div>
+                </div>
                 
-                <fieldset>
-                    <legend>Contáctanos</legend>
+                <!--item 5-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i6.jpg" class="card-img-top" alt="Pudding">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Pudding</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--item 6-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="img/i7.jpg" class="card-img-top" alt="Tortitas">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Tortitas</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--menu final-->
 
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+    <!--ap about-->
+    <section class="about-bg py-5" id="about">
+        <div class="container">
+            <div class="linea-vertical"></div>
+            <h1 class="text-center mb-2">Sobre nosotros</h1>
+            <p class="text-center subtitulo mb-4">Nuestra historia</p>
+        </div>
 
-                    <label for="email">Correo electrónico: </label>
-                    <input type="email" id="email" name="email" placeholder="tucorreo@gmail.com" required>
+        <div class="caja-about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p class="lead text-center">Inspirados por la cultura de las cafeterías japonesas, decidimos traer un pedacito de ese mundo a nuestra ciudad.</p>
+                        <p class="text-center">Lo que empezó como un pequeño proyecto lleno de ilusión, hoy es un lugar donde cada detalle está pensado para crear experiencias únicas.</p>
+                        <p class="text-center">Creamos bebidas y postres con cuidado y creatividad, buscando que cada visita sea un momento de alegría y calma.</p>
+                        <p class="text-center">Desde lattes con arte kawaii hasta hotcakes con formas adorables, queremos que cada instante en Kissaten te haga sonreír.</p>
+                        <p class="text-center fw-bold">Porque en Kissaten creemos que la magia está en los pequeños detalles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--final about-->
 
-                    <label for="mensaje">Mensaje: </label>
-                    <textarea name="mensaje" id="mensaje" rows="10" cols="10" placeholder="Escribe tu mensaje..." required></textarea>
-                    
-                </fieldset>
+    <!--ap contacto -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <div class="linea-vertical"></div>
+            <h1 class="text-center mb-2">Contáctanos</h1>
+            <p class="text-center subtitulo mb-4">Estamos aquí para ti</p>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-</section>
-    <!--contact us final-->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="contact-caja">
+                        <form>
+                            <fieldset class="border p-4 rounded">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre">
+                                </div>
 
-    <!--footer-->
-    <footer>
-        <nav class="referencias">
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About us</a>
-            <a href="#contact">Contact us</a>
-        </nav>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" placeholder="tucorreo@gmail.com">
+                                </div>
 
-        <section class="direccion">
-            <h3>Encuéntranos en: </h3>
-            <p>c/Los capuchinos 35</p>
-        </section>
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--final contacto-->
 
-        <section class="contactanos">
-            <h3>Contáctanos en</h3>
-            <p>kissatencafe@gmail.com</p>
-            <p>SXX XXX XXX XX</p>
-        </section>
+    <!--ap footer-->
+    <footer class="py-4">
+        <div class="container">
+            <nav class="text-center mb-3">
+                <a href="#home">Home</a>
+                <a href="#menu-section">Menu</a>
+                <a href="#about">About us</a>
+                <a href="#contact">Contact us</a>
+            </nav>
 
-        <section class="footer-bottom">
-            <p>© 2025 Kissaten. Alliumcep4</p>
-        </section>
+            <div class="row text-center mb-3">
+                <div class="col-md-6">
+                    <h3>Encuéntranos en:</h3>
+                    <p>c/Los capuchinos 35</p>
+                </div>
 
+                <div class="col-md-6">
+                    <h3>Contáctanos en:</h3>
+                    <p>kissatencafe@gmail.com</p>
+                    <p>863 92 08 32</p>
+                </div>
+            </div>
+
+            <div class="text-center pt-3 border-top">
+                <p class="mb-0">© 2025 Kissaten. Alliumcep4</p>
+            </div>
+        </div>
     </footer>
-    <!--footer final-->
+    <!--final footer-->
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
