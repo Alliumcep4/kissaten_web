@@ -110,10 +110,10 @@
 
         /* About */
         .about-bg {
-        background: var(--color-fondo);
-        padding: 4rem 2rem 6rem; 
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
+            background: var(--color-fondo);
+            padding: 4rem 2rem 6rem; 
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
         }
 
         .about-bg h1 {
