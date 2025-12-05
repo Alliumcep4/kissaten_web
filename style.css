@@ -79,7 +79,11 @@ body {
     border-radius: 50px;
     font-weight: bold;
     transition: 0.3s;
+    position: relative;
+    top: -40px;  
+    left: -20px;  
 }
+
 
 .boton_home:hover {
     transform: scale(1.1);
