@@ -133,17 +133,17 @@
     <!--menu final-->
 
     <!--ap about-->
-    <section id="about" class="seccion_about">
+   <section id="about" class="seccion_about" itemscope itemtype="https://schema.org/Restaurant">
         <h2 class="visually-hidden">Contenido about</h2>
-        <article class="encabezado_about">
+
+        <div class="encabezado_about">
             <figure class="linea-vertical"></figure>
             <h2 class="titulo_seccion">Sobre nosotros</h2>
             <h3 class="subtitulo_seccion">Nuestra historia</h3>
-        </article>
+        </div>
 
-      <article class="caja_about">
-            <h2 class="visually-hidden">Txto sobre la cafetería</h2>
-            <article class="texto_about" itemprop="description">
+        <div class="caja_about" itemprop="description">
+            <div class="texto_about">
                 <h2 class="visually-hidden">Descripción de la cafetería</h2>
                 <p>
                     Inspirados por la cultura de las cafeterías japonesas decidimos traer
@@ -160,40 +160,36 @@
                 <p class="texto_resaltado">
                     En Kissaten creemos que la magia está en los pequeños detalles.
                 </p>
-            </article>
+            </div>
 
             <figure class="caja_imagen_about">
                 <img src="img/about_us_foto.png" alt="Cafetería Kissaten" class="imagen_about" itemprop="photo">
             </figure>
 
-            <article class="contenedor_eslogan">
-                <h2 class="visually-hidden">Eslogan de la cafetería</h2>
-                <div style="text-align: center;">
+            <div class="contenedor_eslogan">
                 <h3 style="
                     font-family: 'Mochiy Pop One', sans-serif;
                     font-size: 1.5rem;
                     color: #3d2914;
-                    text-align: center;
                     margin: 1rem 0 0.5rem 0;
                     font-weight: 600;
                     padding: 5px 10px;  
                     border-radius: 100px; 
-                    background-color: rgb(136, 117, 78);
-                    display: inline-block;">
+                    background-color: rgb(136, 117, 78);">
                     Nuestra filosofía
                 </h3>
-                </div>
 
-                <article class="caja_eslogan">
-                    <h2 class="visually-hidden">Eslogan de la cafetería</h2>
+                <div class="caja_eslogan">
                     <p class="texto_eslogan">
                         Quién diría que algo tan amargo como el café podría ser tan adorablemente
                         <span class="dulce">dulce</span>.
                     </p>
-                </article>
-            </article>
-        </article>
+                </div>
+            </div>
+        </div>
     </section>
+
+
 
     <!--final about-->
 

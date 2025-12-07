@@ -244,7 +244,13 @@ body {
     grid-row: 2;
     margin-top: 20px;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
 
 .caja_eslogan {
     background-color: var(--color-principal);
@@ -268,17 +274,6 @@ body {
 .dulce {
     color: var(--color-acento);
     font-weight: bold;
-}
-
-.comillas_eslogan {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.3;
-    overflow: visible;
 }
 
 
