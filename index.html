@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página web de una cafeteria al estilo cafetería japonesa  dividida en varias secciones: inicio, menú, sobre nosotros, y contáctanos">
+    <meta name="description"
+        content="Página web de una cafeteria al estilo cafetería japonesa  dividida en varias secciones: inicio, menú, sobre nosotros, y contáctanos">
     <meta name="author" content="Dunia Matanza">
     <meta name="copyright" content="Dunia Matanza 2025">
     <meta name="robots" content="index, follow">
@@ -45,14 +46,227 @@
     <!--final barra_navegación-->
 
     <!--no bootstrap-->
+    
     <!--ap home-->
     <section class="seccion_home" id="home">
         <h1 class="visually-hidden">Inicio</h1>
         <div class="caja_home">
             <a href="#menu-section" class="boton_home">Ver menú</a>
         </div>
+        
     </section>
+    
     <!--final home-->
+    <!-- Video-->
+<section id="video-promocional" class="py-5 text-center">
+    <div class="container">
+        <h2 class="titulo_seccion mb-3">Descubre Kissaten</h2>
+        <p class="subtitulo_seccion mb-4">Un vistazo a nuestra esencia y ambiente</p>
+
+        <div class="video-wrapper">
+            <video controls width="600">
+                <source src="video/promocional.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+    </div>
+</section>
+<style>
+#video-promocional {
+    background-color: var(--fondo-crema);
+}
+
+#video-promocional .video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-promocional video {
+    width: 100%;
+    max-width: 600px; 
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+    #video-promocional video {
+        max-width: 90%;
+    }
+}
+</style>
+
+    <!-- INFOGRAFÍA -->
+<section id="infografia" class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="titulo_seccion">Cómo trabajamos</h2>
+            <p class="subtitulo_seccion">Nuestros productos, procesos y valores en un vistazo</p>
+        </div>
+
+        <!-- Flujo  -->
+        <div class="infografia-flow row text-center mb-5 g-4 justify-content-center">
+            <div class="col-md-3 flow-step">
+                <div class="flow-icon mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cup" viewBox="0 0 16 16">
+                        <path d="M.11 3.5a.5.5 0 0 1 .5-.5h1.28l.547-1.094A.5.5 0 0 1 2.91 1h10.18a.5.5 0 0 1 .473.356L14.11 3H15.5a.5.5 0 0 1 0 1h-1v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V4.5H.61a.5.5 0 0 1-.5-.5zm2.5 0h8v6a3 3 0 0 0 3 3h1v-6H2.61v.5z"/>
+                    </svg>
+                </div>
+                <h5>Preparación</h5>
+                <p>Todos nuestros productos se preparan al instante con dedicación y cuidado.</p>
+            </div>
+
+            <div class="col-md-3 flow-step">
+                <div class="flow-icon mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cupcake" viewBox="0 0 16 16">
+                        <path d="M8 0a2 2 0 0 1 2 2H6a2 2 0 0 1 2-2z"/>
+                        <path d="M3 4h10l-1 9H4L3 4z"/>
+                    </svg>
+                </div>
+                <h5>Postres</h5>
+                <p>Dulces elaborados con cuidado y diseño para cada ocasión.</p>
+            </div>
+
+            <div class="col-md-3 flow-step">
+                <div class="flow-icon mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5v-3a.5.5 0 0 1 1 0v3A1.5 1.5 0 0 0 9.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.146-6.647z"/>
+                        <path d="M13 2.5v6.793l-5-5-5 5V2.5a.5.5 0 0 1 1 0v5.293l4-4 4 4V2.5a.5.5 0 0 1 1 0z"/>
+                    </svg>
+                </div>
+                <h5>Ambiente</h5>
+                <p>Espacios acogedores que invitan a relajarse y disfrutar de cada momento.</p>
+            </div>
+        </div>
+
+        <!-- 2. Productos principales -->
+        <div class="productos-principales row text-center mb-5 g-4 justify-content-center">
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="img/i2.jpg" class="card-img-top" alt="Latte">
+                    <div class="card-body">
+                        <h5 class="card-title">Latte</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="img/i3.jpg" class="card-img-top" alt="Hotcake">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotcake</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="img/i4.jpg" class="card-img-top" alt="Matcha">
+                    <div class="card-body">
+                        <h5 class="card-title">Matcha</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Valores corporativos -->
+        <div class="valores-corporativos row text-center g-4 justify-content-center">
+            <div class="col-md-3 valor">
+                <h5>Calidad</h5>
+                <hr class="valor-line">
+                <p>Productos elaborados con los mejores ingredientes.</p>
+            </div>
+            <div class="col-md-3 valor">
+                <h5>Creatividad</h5>
+                <hr class="valor-line">
+                <p>Diseños y sabores innovadores en cada producto.</p>
+            </div>
+            <div class="col-md-3 valor">
+                <h5>Cercanía</h5>
+                <hr class="valor-line">
+                <p>Atención personalizada y ambiente acogedor.</p>
+            </div>
+            <div class="col-md-3 valor">
+                <h5>Pasión</h5>
+                <hr class="valor-line">
+                <p>Amor por la cafetería y la cultura japonesa en cada detalle.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+/* Estilos infografía completa */
+
+/* Flujo */
+.infografia-flow .flow-step {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.infografia-flow .flow-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.flow-icon {
+    color: #6b4c3b;
+}
+.flow-step h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #3b2f2f;
+}
+.flow-step p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Productos principales */
+.productos-principales .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.productos-principales .card-title {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #3b2f2f;
+}
+
+/* Valores corporativos */
+.valores-corporativos .valor {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.valores-corporativos .valor h5 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #3b2f2f;
+}
+.valores-corporativos .valor-line {
+    width: 50px;
+    border: 2px solid #d9a066;
+    margin: 10px auto;
+}
+.valores-corporativos .valor p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .infografia-flow .flow-step,
+    .productos-principales .card,
+    .valores-corporativos .valor {
+        margin-bottom: 20px;
+    }
+}
+</style>
 
     <!--ap menu-->
     <section class="py-5" id="menu-section" itemprop="hasMenu" itemscope itemtype="https://schema.org/Menu">
@@ -131,9 +345,84 @@
         </div>
     </section>
     <!--menu final-->
+<!--CAROUSEL -->
+<section id="carousel-home" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
+    <!--  -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+        <!-- i 1 -->
+        <div class="carousel-item active" data-bs-interval="5000">
+            <div class="overlay-image" style="background-image:url('img/baos.jpeg');"></div>
+            <div class="container carousel-caption-custom">
+                <h1>Bienvenidos a Kissaten</h1>
+                <p>Un pedacito de Japón en cada taza.</p>
+                <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
+            </div>
+        </div>
+
+        <!-- i 2 -->
+        <div class="carousel-item" data-bs-interval="5000">
+            <div class="overlay-image" style="background-image:url('img/bearbuns.jpeg');"></div>
+            <div class="container carousel-caption-custom">
+                <h1>Nuestros Postres</h1>
+                <p>Dulces que hacen sonreír cada día.</p>
+                <a href="#menu-section" class="btn btn-primary btn-lg">Explorar menú</a>
+            </div>
+        </div>
+
+        <!-- i 3 -->
+        <div class="carousel-item" data-bs-interval="5000">
+            <div class="overlay-image" style="background-image:url('img/matcha.jpeg');"></div>
+            <div class="container carousel-caption-custom">
+                <h1>Bebidas Especiales</h1>
+                <p>El matcha y latte más adorables de la ciudad.</p>
+                <a href="#menu-section" class="btn btn-primary btn-lg">Descúbrelas</a>
+            </div>
+        </div>
+
+        <!-- i 4 -->
+        <div class="carousel-item" data-bs-interval="5000">
+            <div class="overlay-image" style="background-image:url('img/hotcats.jpeg');"></div>
+            <div class="container carousel-caption-custom">
+                <h1>Hotcakes Adorables</h1>
+                <p>Esponjosos y deliciosos, hechos con amor.</p>
+                <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+
+</section>
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</section>
     <!--ap about-->
-   <section id="about" class="seccion_about" itemscope itemtype="https://schema.org/Restaurant">
+    <section id="about" class="seccion_about" itemscope itemtype="https://schema.org/Restaurant">
         <h2 class="visually-hidden">Contenido about</h2>
 
         <div class="encabezado_about">
@@ -187,6 +476,16 @@
                 </div>
             </div>
         </div>
+        <div class="podcast-wrapper">
+    <div class="podcast-caja">
+        <h3>Conócenos aún mejor</h3>
+        <p>Un pequeño viaje a nuestra esencia</p>
+
+        <audio controls>
+            <source src="audio/podcast.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
     </section>
 
 
@@ -203,7 +502,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="contact-caja">
-                        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" style="display:none;">
+                        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"
+                            style="display:none;">
                             <span itemprop="streetAddress">c/Los capuchinos 35</span>
                             <span itemprop="addressLocality">Tarragona</span>
                             <span itemprop="postalCode">53013</span>
@@ -232,7 +532,8 @@
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                        required>
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Aceptas las <a href="politica.html" target="_blank">políticas de privacidad</a>.
                                     </label>
@@ -244,6 +545,15 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h2 class="text-center mb-3">Te esperamos aquí</h2>
+
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.google.com/maps?q=41.1188827,1.2444909&hl=es&z=15&output=embed"
+                        style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>

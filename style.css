@@ -58,6 +58,29 @@ body {
     background: rgba(217, 160, 102, 0.2);
     transform: scale(1.1);
 }
+.podcast-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra completamente */
+    margin-top: 40px;
+}
+
+.podcast-caja {
+    background-color: #f5e6c8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px; /* limita ancho */
+    width: 100%;
+}
+
+.podcast-caja audio {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+}
 
 .seccion_home {
     width: 100%;
@@ -180,6 +203,89 @@ body {
     font-size: 1.2rem;
     color: var(--color-acento);
     margin-bottom: 0;
+}
+#carousel-home {
+    position: relative;
+}
+
+.carousel-item {
+    height: 80vh;
+    min-height: 400px;
+    position: relative;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: 1;
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.carousel-caption-custom h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.carousel-caption-custom p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-caption-custom .btn {
+    padding: 12px 35px;
+    font-size: 1rem;
+}
+/* Overlay más oscuro para mejorar legibilidad */
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* negro semitransparente */
+    z-index: 1;
+}
+
+/* Asegura que el caption siempre esté encima */
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+    padding: 0 15px; /* evita que se salga en móviles */
+}
+
+/* Ajustes de texto responsive */
+@media (max-width: 767px) {
+    .carousel-caption-custom h1 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption-custom p {
+        font-size: 1rem;
+    }
+    .carousel-caption-custom .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
 }
 
 
