@@ -5,16 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Página web de una cafeteria al estilo cafetería japonesa  dividida en varias secciones: inicio, menú, sobre nosotros, y contáctanos">
+        content="Kissaten - Cafetería japonesa con café, postres y un ambiente único en Tarragona. Disfruta de lattes, hotcakes, matcha y más.">
     <meta name="author" content="Dunia Matanza">
     <meta name="copyright" content="Dunia Matanza 2025">
     <meta name="robots" content="index, follow">
 
-    <title>Kissaten</title>
+    <title>Kissaten - Cafetería Japonesa en Tarragona</title>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo_v2.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ ACCESIBILIDAD: Skip to main content link -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #3b2f2f;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 4px 0;
+            z-index: 9999;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ✅ ACCESIBILITAT: Focus visible clar per navegació per teclat */
+        :focus-visible {
+            outline: 3px solid #d9a066 !important;
+            outline-offset: 3px !important;
+        }
+
+        /* ✅ Contrast millorat */
+        .nav-link {
+            color: #fff !important;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #f5d9b8 !important;
+            text-decoration: underline;
+        }
+
+        /* ✅ WCAG: Contrast ratio adequat per text sobre crema */
+        .subtitulo {
+            color: #4a3728;
+        }
+    </style>
 </head>
 
 <body itemscope itemtype="https://schema.org/Restaurant">
@@ -24,665 +65,705 @@
     <link itemprop="image" href="https://i.postimg.cc/htsntqmK/logo-v2.png">
     <link itemprop="url" href="https://alliumcep4.github.io/kissaten_web/">
 
-    <!--bootstrap total-->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- ✅ ACCESIBILITAT: Enllaç per saltar al contingut principal -->
+    <a href="#main-content" class="skip-link">Saltar al contingut principal</a>
+
+    <!-- ✅ ACCESIBILITAT: role="navigation" i aria-label per identificar la nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Navegació principal">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo_v2.png" alt="logo_Kissaten" itemprop="logo">
+            <a class="navbar-brand" href="#home" aria-label="Kissaten - Inici">
+                <img src="img/logo_v2.png" alt="Logo de Kissaten - cafetería japonesa" itemprop="logo" width="50" height="50">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Obrir i tancar el menú de navegació">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu-section">Menú</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contáctanos</a></li>
+                <ul class="navbar-nav" role="list">
+                    <li class="nav-item" role="listitem"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item" role="listitem"><a class="nav-link" href="#menu-section">Menú</a></li>
+                    <li class="nav-item" role="listitem"><a class="nav-link" href="#about">Sobre nosotros</a></li>
+                    <li class="nav-item" role="listitem"><a class="nav-link" href="#contact">Contáctanos</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--final barra_navegación-->
 
-    <!--no bootstrap-->
-    
-    <!--ap home-->
-    <section class="seccion_home" id="home">
-        <h1 class="visually-hidden">Inicio</h1>
-        <div class="caja_home">
-            <a href="#menu-section" class="boton_home">Ver menú</a>
-        </div>
-        
-    </section>
-    
-    <!--final home-->
-    <!-- Video-->
-<section id="video-promocional" class="py-5 text-center">
-    <div class="container">
-        <h2 class="titulo_seccion mb-3">Descubre Kissaten</h2>
-        <p class="subtitulo_seccion mb-4">Un vistazo a nuestra esencia y ambiente</p>
+    <!-- ✅ ACCESIBILITAT: id main-content per al skip link -->
+    <main id="main-content">
 
-        <div class="video-wrapper">
-            <video controls width="600">
-                <source src="video/promocional.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-            </video>
-        </div>
-    </div>
-</section>
-<style>
-#video-promocional {
-    background-color: var(--fondo-crema);
-}
-
-#video-promocional .video-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#video-promocional video {
-    width: 100%;
-    max-width: 600px; 
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 767px) {
-    #video-promocional video {
-        max-width: 90%;
-    }
-}
-</style>
-
-    <!-- INFOGRAFÍA -->
-<section id="infografia" class="py-5">
-    <div class="container">
-
-        <div class="text-center mb-5">
-            <h2 class="titulo_seccion">Cómo trabajamos</h2>
-            <p class="subtitulo_seccion">Nuestros productos, procesos y valores en un vistazo</p>
-        </div>
-
-        <!-- Flujo  -->
-        <div class="infografia-flow row text-center mb-5 g-4 justify-content-center">
-            <div class="col-md-3 flow-step">
-                <div class="flow-icon mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cup" viewBox="0 0 16 16">
-                        <path d="M.11 3.5a.5.5 0 0 1 .5-.5h1.28l.547-1.094A.5.5 0 0 1 2.91 1h10.18a.5.5 0 0 1 .473.356L14.11 3H15.5a.5.5 0 0 1 0 1h-1v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V4.5H.61a.5.5 0 0 1-.5-.5zm2.5 0h8v6a3 3 0 0 0 3 3h1v-6H2.61v.5z"/>
-                    </svg>
-                </div>
-                <h5>Preparación</h5>
-                <p>Todos nuestros productos se preparan al instante con dedicación y cuidado.</p>
+        <!-- SECCIÓN HOME -->
+        <section class="seccion_home" id="home" aria-labelledby="home-heading">
+            <h1 id="home-heading" class="visually-hidden">Inicio - Kissaten Cafetería Japonesa</h1>
+            <div class="caja_home">
+                <a href="#menu-section" class="boton_home" aria-label="Ver el menú completo de Kissaten">Ver menú</a>
             </div>
+        </section>
 
-            <div class="col-md-3 flow-step">
-                <div class="flow-icon mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cupcake" viewBox="0 0 16 16">
-                        <path d="M8 0a2 2 0 0 1 2 2H6a2 2 0 0 1 2-2z"/>
-                        <path d="M3 4h10l-1 9H4L3 4z"/>
-                    </svg>
+        <!-- VIDEO PROMOCIONAL -->
+        <section id="video-promocional" class="py-5 text-center" aria-labelledby="video-title">
+            <div class="container">
+                <h2 class="titulo_seccion mb-3" id="video-title">Descubre Kissaten</h2>
+                <p class="subtitulo_seccion mb-4">Un vistazo a nuestra esencia y ambiente</p>
+
+                <div class="video-wrapper">
+                    <!-- ✅ ACCESIBILITAT: aria-label i subtítols recomanats -->
+                    <video controls
+                           width="600"
+                           aria-label="Vídeo promocional de Kissaten - ambient i productes de la cafeteria japonesa"
+                           preload="metadata">
+                        <source src="video/promocional.mp4" type="video/mp4">
+                        <!-- ✅ ACCESIBILITAT: Subtítols (afegir track quan estiguin disponibles) -->
+                        <!-- <track kind="subtitles" src="video/subtitols-es.vtt" srclang="es" label="Español"> -->
+                        <p>Tu navegador no soporta la reproducción de video.
+                           <a href="video/promocional.mp4">Descargar el vídeo</a>
+                        </p>
+                    </video>
                 </div>
-                <h5>Postres</h5>
-                <p>Dulces elaborados con cuidado y diseño para cada ocasión.</p>
             </div>
+        </section>
 
-            <div class="col-md-3 flow-step">
-                <div class="flow-icon mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
-                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5v-3a.5.5 0 0 1 1 0v3A1.5 1.5 0 0 0 9.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.146-6.647z"/>
-                        <path d="M13 2.5v6.793l-5-5-5 5V2.5a.5.5 0 0 1 1 0v5.293l4-4 4 4V2.5a.5.5 0 0 1 1 0z"/>
-                    </svg>
+        <style>
+        #video-promocional {
+            background-color: var(--fondo-crema, #fdf6ec);
+        }
+        #video-promocional .video-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #video-promocional video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 767px) {
+            #video-promocional video {
+                max-width: 90%;
+            }
+        }
+        </style>
+
+        <!-- INFOGRAFÍA -->
+        <section id="infografia" class="py-5" aria-labelledby="infografia-title">
+            <div class="container">
+
+                <div class="text-center mb-5">
+                    <h2 class="titulo_seccion" id="infografia-title">Cómo trabajamos</h2>
+                    <p class="subtitulo_seccion">Nuestros productos, procesos y valores en un vistazo</p>
                 </div>
-                <h5>Ambiente</h5>
-                <p>Espacios acogedores que invitan a relajarse y disfrutar de cada momento.</p>
-            </div>
-        </div>
 
-        <!-- 2. Productos principales -->
-        <div class="productos-principales row text-center mb-5 g-4 justify-content-center">
-            <div class="col-md-3">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/i2.jpg" class="card-img-top" alt="Latte">
-                    <div class="card-body">
-                        <h5 class="card-title">Latte</h5>
+                <!-- Flujo -->
+                <div class="infografia-flow row text-center mb-5 g-4 justify-content-center" role="list" aria-label="Procés de treball">
+
+                    <div class="col-md-3 flow-step" role="listitem">
+                        <div class="flow-icon mb-3" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                                 class="bi bi-cup" viewBox="0 0 16 16" focusable="false">
+                                <title>Icono de taza de café</title>
+                                <path d="M.11 3.5a.5.5 0 0 1 .5-.5h1.28l.547-1.094A.5.5 0 0 1 2.91 1h10.18a.5.5 0 0 1 .473.356L14.11 3H15.5a.5.5 0 0 1 0 1h-1v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V4.5H.61a.5.5 0 0 1-.5-.5zm2.5 0h8v6a3 3 0 0 0 3 3h1v-6H2.61v.5z"/>
+                            </svg>
+                        </div>
+                        <h3>Preparación</h3>
+                        <p>Todos nuestros productos se preparan al instante con dedicación y cuidado.</p>
+                    </div>
+
+                    <div class="col-md-3 flow-step" role="listitem">
+                        <div class="flow-icon mb-3" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                                 class="bi bi-stars" viewBox="0 0 16 16" focusable="false">
+                                <title>Icono de postres</title>
+                                <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                            </svg>
+                        </div>
+                        <h3>Postres</h3>
+                        <p>Dulces elaborados con cuidado y diseño para cada ocasión.</p>
+                    </div>
+
+                    <div class="col-md-3 flow-step" role="listitem">
+                        <div class="flow-icon mb-3" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                                 class="bi bi-house-heart" viewBox="0 0 16 16" focusable="false">
+                                <title>Icono de ambiente acogedor</title>
+                                <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982"/>
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                            </svg>
+                        </div>
+                        <h3>Ambiente</h3>
+                        <p>Espacios acogedores que invitan a relajarse y disfrutar de cada momento.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/i3.jpg" class="card-img-top" alt="Hotcake">
-                    <div class="card-body">
-                        <h5 class="card-title">Hotcake</h5>
+
+                <!-- Productos principales -->
+                <div class="productos-principales row text-center mb-5 g-4 justify-content-center">
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="img/i2.jpg" class="card-img-top"
+                                 alt="Taza de latte con arte latte en espuma de leche"
+                                 loading="lazy" width="300" height="180">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Latte</h3>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card h-100 shadow-sm">
-                    <img src="img/i4.jpg" class="card-img-top" alt="Matcha">
-                    <div class="card-body">
-                        <h5 class="card-title">Matcha</h5>
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="img/i3.jpg" class="card-img-top"
+                                 alt="Hotcake esponjoso estilo japonés con sirope y decoración"
+                                 loading="lazy" width="300" height="180">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Hotcake</h3>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. Valores corporativos -->
-        <div class="valores-corporativos row text-center g-4 justify-content-center">
-            <div class="col-md-3 valor">
-                <h5>Calidad</h5>
-                <hr class="valor-line">
-                <p>Productos elaborados con los mejores ingredientes.</p>
-            </div>
-            <div class="col-md-3 valor">
-                <h5>Creatividad</h5>
-                <hr class="valor-line">
-                <p>Diseños y sabores innovadores en cada producto.</p>
-            </div>
-            <div class="col-md-3 valor">
-                <h5>Cercanía</h5>
-                <hr class="valor-line">
-                <p>Atención personalizada y ambiente acogedor.</p>
-            </div>
-            <div class="col-md-3 valor">
-                <h5>Pasión</h5>
-                <hr class="valor-line">
-                <p>Amor por la cafetería y la cultura japonesa en cada detalle.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<style>
-/* Estilos infografía completa */
-
-/* Flujo */
-.infografia-flow .flow-step {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 30px 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.infografia-flow .flow-step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-.flow-icon {
-    color: #6b4c3b;
-}
-.flow-step h5 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #3b2f2f;
-}
-.flow-step p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Productos principales */
-.productos-principales .card-img-top {
-    height: 180px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-.productos-principales .card-title {
-    margin-top: 10px;
-    font-weight: 600;
-    color: #3b2f2f;
-}
-
-/* Valores corporativos */
-.valores-corporativos .valor {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-.valores-corporativos .valor h5 {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #3b2f2f;
-}
-.valores-corporativos .valor-line {
-    width: 50px;
-    border: 2px solid #d9a066;
-    margin: 10px auto;
-}
-.valores-corporativos .valor p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .infografia-flow .flow-step,
-    .productos-principales .card,
-    .valores-corporativos .valor {
-        margin-bottom: 20px;
-    }
-}
-</style>
-
-    <!--ap menu-->
-    <section class="py-5" id="menu-section" itemprop="hasMenu" itemscope itemtype="https://schema.org/Menu">
-        <div class="container">
-            <div class="linea-vertical"></div>
-            <h1 class="text-center mb-2" itemprop="name">Menú</h1>
-            <p class="text-center subtitulo mb-5">Nuestras especialidades</p>
-
-            <div class="row g-4">
-                <!--item 1-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i2.jpg" class="card-img-top" alt="Latte" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Latte</h5>
-                            <meta itemprop="description" content="Café latte">
+                    <div class="col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="img/i4.jpg" class="card-img-top"
+                                 alt="Vaso de matcha verde con espuma cremosa"
+                                 loading="lazy" width="300" height="180">
+                            <div class="card-body">
+                                <h3 class="card-title h5">Matcha</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!--item 2-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i3.jpg" class="card-img-top" alt="Hotcake" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Hotcake</h5>
-                            <meta itemprop="description" content="Hotcakes esponjosos estilo japonés">
+                <!-- Valores corporativos -->
+                <div class="valores-corporativos row text-center g-4 justify-content-center" role="list" aria-label="Valors corporatius">
+                    <div class="col-md-3 valor" role="listitem">
+                        <h3>Calidad</h3>
+                        <hr class="valor-line" aria-hidden="true">
+                        <p>Productos elaborados con los mejores ingredientes.</p>
+                    </div>
+                    <div class="col-md-3 valor" role="listitem">
+                        <h3>Creatividad</h3>
+                        <hr class="valor-line" aria-hidden="true">
+                        <p>Diseños y sabores innovadores en cada producto.</p>
+                    </div>
+                    <div class="col-md-3 valor" role="listitem">
+                        <h3>Cercanía</h3>
+                        <hr class="valor-line" aria-hidden="true">
+                        <p>Atención personalizada y ambiente acogedor.</p>
+                    </div>
+                    <div class="col-md-3 valor" role="listitem">
+                        <h3>Pasión</h3>
+                        <hr class="valor-line" aria-hidden="true">
+                        <p>Amor por la cafetería y la cultura japonesa en cada detalle.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <style>
+        .infografia-flow .flow-step {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .infografia-flow .flow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        /* ✅ ACCESIBILITAT: Respectar reduce-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .infografia-flow .flow-step {
+                transition: none;
+            }
+        }
+        .flow-icon { color: #6b4c3b; }
+        .flow-step h3 { margin-top: 10px; margin-bottom: 10px; font-weight: 600; color: #3b2f2f; font-size: 1.1rem; }
+        .flow-step p { font-size: 0.95rem; color: #444; }
+        .productos-principales .card-img-top { height: 180px; object-fit: cover; border-radius: 15px 15px 0 0; }
+        .productos-principales .card-title { margin-top: 10px; font-weight: 600; color: #3b2f2f; }
+        .valores-corporativos .valor { background-color: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .valores-corporativos .valor h3 { margin-bottom: 5px; font-weight: 600; color: #3b2f2f; font-size: 1.1rem; }
+        .valores-corporativos .valor-line { width: 50px; border: 2px solid #d9a066; margin: 10px auto; }
+        .valores-corporativos .valor p { font-size: 0.9rem; color: #444; }
+        @media (max-width: 767px) {
+            .infografia-flow .flow-step, .productos-principales .card, .valores-corporativos .valor { margin-bottom: 20px; }
+        }
+        </style>
+
+        <!-- MENÚ -->
+        <section class="py-5" id="menu-section"
+                 aria-labelledby="menu-heading"
+                 itemprop="hasMenu" itemscope itemtype="https://schema.org/Menu">
+            <div class="container">
+                <div class="linea-vertical" aria-hidden="true"></div>
+                <h2 class="text-center mb-2" id="menu-heading" itemprop="name">Menú</h2>
+                <p class="text-center subtitulo mb-5">Nuestras especialidades</p>
+
+                <!-- ✅ ACCESIBILITAT: ul semàntic per als ítems del menú -->
+                <ul class="row g-4 list-unstyled" aria-label="Llista d'especialitats del menú">
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i2.jpg" class="card-img-top"
+                                 alt="Latte - café con leche con arte latte en la espuma"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Latte</h3>
+                                <meta itemprop="description" content="Café latte artesanal con arte en espuma de leche">
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i3.jpg" class="card-img-top"
+                                 alt="Hotcake - tortita esponjosa estilo japonés con sirope de arce"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Hotcake</h3>
+                                <meta itemprop="description" content="Hotcakes esponjosos estilo japonés">
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i4.jpg" class="card-img-top"
+                                 alt="Matcha - bebida de té verde ceremonial japonés con leche vegetal"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Matcha</h3>
+                                <meta itemprop="description" content="Té matcha ceremonial japonés">
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i5.jpg" class="card-img-top"
+                                 alt="Chai - té especiado con canela, cardamomo, jengibre y leche"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Chai</h3>
+                                <meta itemprop="description" content="Té chai aromático con especias">
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i6.jpg" class="card-img-top"
+                                 alt="Pudding - pudín japonés suave de vainilla con caramelo"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Pudding</h3>
+                                <meta itemprop="description" content="Pudding japonés de vainilla con caramelo">
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="col-md-4">
+                        <article class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
+                            <img src="img/i7.jpg" class="card-img-top"
+                                 alt="Tortitas - tortitas japonesas decoradas con forma de animales"
+                                 itemprop="image" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h5" itemprop="name">Tortitas</h3>
+                                <meta itemprop="description" content="Tortitas japonesas decoradas">
+                            </div>
+                        </article>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- CARRUSEL -->
+        <section aria-label="Galeria d'imatges de Kissaten" aria-roledescription="carrusel">
+            <div id="carousel-home" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                <div class="carousel-indicators" role="tablist" aria-label="Diapositives del carrusel">
+                    <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0"
+                            class="active" aria-current="true"
+                            aria-label="Diapositiva 1: Bienvenidos a Kissaten" role="tab"></button>
+                    <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"
+                            aria-label="Diapositiva 2: Nuestros Postres" role="tab"></button>
+                    <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"
+                            aria-label="Diapositiva 3: Bebidas Especiales" role="tab"></button>
+                    <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="3"
+                            aria-label="Diapositiva 4: Hotcakes Adorables" role="tab"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000" role="tabpanel" aria-label="Diapositiva 1 de 4">
+                        <div class="overlay-image" style="background-image:url('img/baos.jpeg');"
+                             role="img" aria-label="Interior acogedor de Kissaten con mesas y decoración japonesa"></div>
+                        <div class="container carousel-caption-custom">
+                            <h2>Bienvenidos a Kissaten</h2>
+                            <p>Un pedacito de Japón en cada taza.</p>
+                            <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000" role="tabpanel" aria-label="Diapositiva 2 de 4">
+                        <div class="overlay-image" style="background-image:url('img/bearbuns.jpeg');"
+                             role="img" aria-label="Bear buns - bollos con forma de oso rellenos de crema"></div>
+                        <div class="container carousel-caption-custom">
+                            <h2>Nuestros Postres</h2>
+                            <p>Dulces que hacen sonreír cada día.</p>
+                            <a href="#menu-section" class="btn btn-primary btn-lg">Explorar menú</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000" role="tabpanel" aria-label="Diapositiva 3 de 4">
+                        <div class="overlay-image" style="background-image:url('img/matcha.jpeg');"
+                             role="img" aria-label="Vaso de matcha latte verde con espuma cremosa"></div>
+                        <div class="container carousel-caption-custom">
+                            <h2>Bebidas Especiales</h2>
+                            <p>El matcha y latte más adorables de la ciudad.</p>
+                            <a href="#menu-section" class="btn btn-primary btn-lg">Descúbrelas</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000" role="tabpanel" aria-label="Diapositiva 4 de 4">
+                        <div class="overlay-image" style="background-image:url('img/hotcats.jpeg');"
+                             role="img" aria-label="Hotcakes esponjosos con forma de gato con sirope"></div>
+                        <div class="container carousel-caption-custom">
+                            <h2>Hotcakes Adorables</h2>
+                            <p>Esponjosos y deliciosos, hechos con amor.</p>
+                            <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
                         </div>
                     </div>
                 </div>
 
-                <!--item 3-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i4.jpg" class="card-img-top" alt="Matcha" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Matcha</h5>
-                            <meta itemprop="description" content="Té matcha">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev"
+                        aria-label="Diapositiva anterior">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next"
+                        aria-label="Diapositiva siguiente">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="about" class="seccion_about" aria-labelledby="about-heading"
+                 itemscope itemtype="https://schema.org/Restaurant">
+            <div class="encabezado_about">
+                <figure class="linea-vertical" aria-hidden="true"></figure>
+                <h2 class="titulo_seccion" id="about-heading">Sobre nosotros</h2>
+                <p class="subtitulo_seccion">Nuestra historia</p>
+            </div>
+
+            <div class="caja_about" itemprop="description">
+                <div class="texto_about">
+                    <p>
+                        Inspirados por la cultura de las cafeterías japonesas decidimos traer
+                        un pedacito de ese mundo a nuestra ciudad.
+                    </p>
+                    <p>
+                        Lo que empezó como un pequeño proyecto lleno de ilusión hoy es un lugar
+                        donde cada detalle está pensado para crear experiencias únicas.
+                    </p>
+                    <p>
+                        Desde lattes adorables hasta dulces con formas de animales, buscamos que cada visita
+                        sea un momento especial.
+                    </p>
+                    <p class="texto_resaltado">
+                        En Kissaten creemos que la magia está en los pequeños detalles.
+                    </p>
+                </div>
+
+                <figure class="caja_imagen_about">
+                    <img src="img/about_us_foto.png"
+                         alt="Interior de la cafetería Kissaten con decoración japonesa, mesas de madera y plantas"
+                         class="imagen_about" itemprop="photo"
+                         loading="lazy">
+                </figure>
+
+                <div class="contenedor_eslogan">
+                    <h3 style="
+                        font-family: 'Mochiy Pop One', sans-serif;
+                        font-size: 1.5rem;
+                        color: #3d2914;
+                        margin: 1rem 0 0.5rem 0;
+                        font-weight: 600;
+                        padding: 5px 10px;
+                        border-radius: 100px;
+                        background-color: rgb(136, 117, 78);">
+                        Nuestra filosofía
+                    </h3>
+
+                    <div class="caja_eslogan">
+                        <p class="texto_eslogan">
+                            Quién diría que algo tan amargo como el café podría ser tan adorablemente
+                            <span class="dulce">dulce</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PODCAST -->
+            <div class="podcast-wrapper">
+                <div class="podcast-caja">
+                    <h3>Conócenos aún mejor</h3>
+                    <p>Un pequeño viaje a nuestra esencia</p>
+                    <!-- ✅ ACCESIBILITAT: aria-label descriptiu -->
+                    <audio controls
+                           aria-label="Podcast de Kissaten - coneix la nostra essència i història">
+                        <source src="audio/podcast.mp3" type="audio/mpeg">
+                        <p>El teu navegador no suporta àudio.
+                           <a href="audio/podcast.mp3">Descarregar el podcast</a>
+                        </p>
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="py-5" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="linea-vertical" aria-hidden="true"></div>
+                <h2 class="text-center mb-2" id="contact-heading">Contáctanos</h2>
+                <p class="text-center subtitulo mb-4">Estamos aquí para ti</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="contact-caja">
+                            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"
+                                style="display:none;">
+                                <span itemprop="streetAddress">c/Los capuchinos 35</span>
+                                <span itemprop="addressLocality">Tarragona</span>
+                                <span itemprop="postalCode">53013</span>
+                                <span itemprop="addressCountry">ES</span>
+                            </div>
+                            <meta itemprop="telephone" content="863920832">
+                            <meta itemprop="email" content="kissatencafe@gmail.com">
+
+                            <!-- ✅ ACCESIBILITAT: novalidate per gestionar validació manualment,
+                                 aria-required, aria-describedby per errors -->
+                            <form action="submit-form.php" method="POST" aria-label="Formulari de contacte">
+                                <fieldset>
+                                    <legend class="visually-hidden">Formulari de contacte de Kissaten</legend>
+
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">
+                                            Nombre <span aria-hidden="true">*</span>
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="nombre"
+                                               name="nombre"
+                                               placeholder="Escribe tu nombre"
+                                               aria-required="true"
+                                               autocomplete="given-name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">
+                                            Correo electrónico <span aria-hidden="true">*</span>
+                                        </label>
+                                        <input type="email"
+                                               class="form-control"
+                                               id="email"
+                                               name="email"
+                                               placeholder="tucorreo@gmail.com"
+                                               aria-required="true"
+                                               aria-describedby="email-hint"
+                                               autocomplete="email">
+                                        <div id="email-hint" class="form-text">
+                                            Ejemplo: tucorreo@gmail.com
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label">
+                                            Mensaje <span aria-hidden="true">*</span>
+                                        </label>
+                                        <textarea class="form-control"
+                                                  id="mensaje"
+                                                  name="mensaje"
+                                                  rows="5"
+                                                  placeholder="Escribe tu mensaje..."
+                                                  aria-required="true"></textarea>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="privacidad"
+                                               name="privacidad"
+                                               required
+                                               aria-required="true"
+                                               aria-describedby="privacidad-desc">
+                                        <label class="form-check-label" for="privacidad" id="privacidad-desc">
+                                            Acepto las
+                                            <a href="politica.html" target="_blank" rel="noopener noreferrer">
+                                                políticas de privacidad
+                                                <span class="visually-hidden">(s'obre en una nova pestanya)</span>
+                                            </a>.
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        Enviar mensaje
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <!--item 4-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i5.jpg" class="card-img-top" alt="Chai" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Chai</h5>
-                            <meta itemprop="description" content="Té chai aromático con especias">
-                        </div>
+                <!-- MAPA -->
+                <div class="mt-5">
+                    <h3 class="text-center mb-3">Te esperamos aquí</h3>
+                    <div class="ratio ratio-16x9">
+                        <!-- ✅ ACCESIBILITAT: title descriptiu per l'iframe -->
+                        <iframe src="https://www.google.com/maps?q=41.1188827,1.2444909&hl=es&z=15&output=embed"
+                                title="Mapa de Google Maps amb la ubicació de Kissaten a c/Los Capuchinos 35, Tarragona"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                aria-label="Mapa interactiu amb la ubicació de la cafeteria Kissaten a Tarragona">
+                        </iframe>
                     </div>
-                </div>
-
-                <!--item 5-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i6.jpg" class="card-img-top" alt="Pudding" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Pudding</h5>
-                            <meta itemprop="description" content="Pudding japonés">
-                        </div>
-                    </div>
-                </div>
-
-                <!--item 6-->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm" itemscope itemtype="https://schema.org/MenuItem">
-                        <img src="img/i7.jpg" class="card-img-top" alt="Tortitas" itemprop="image">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" itemprop="name">Tortitas</h5>
-                            <meta itemprop="description" content="Tortitas japonesas">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--menu final-->
-<!--CAROUSEL -->
-<section id="carousel-home" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-    <!--  -->
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active" aria-current="true"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="3"></button>
-    </div>
-
-    <div class="carousel-inner">
-
-        <!-- i 1 -->
-        <div class="carousel-item active" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/baos.jpeg');"></div>
-            <div class="container carousel-caption-custom">
-                <h1>Bienvenidos a Kissaten</h1>
-                <p>Un pedacito de Japón en cada taza.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
-            </div>
-        </div>
-
-        <!-- i 2 -->
-        <div class="carousel-item" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/bearbuns.jpeg');"></div>
-            <div class="container carousel-caption-custom">
-                <h1>Nuestros Postres</h1>
-                <p>Dulces que hacen sonreír cada día.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Explorar menú</a>
-            </div>
-        </div>
-
-        <!-- i 3 -->
-        <div class="carousel-item" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/matcha.jpeg');"></div>
-            <div class="container carousel-caption-custom">
-                <h1>Bebidas Especiales</h1>
-                <p>El matcha y latte más adorables de la ciudad.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Descúbrelas</a>
-            </div>
-        </div>
-
-        <!-- i 4 -->
-        <div class="carousel-item" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/hotcats.jpeg');"></div>
-            <div class="container carousel-caption-custom">
-                <h1>Hotcakes Adorables</h1>
-                <p>Esponjosos y deliciosos, hechos con amor.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-    </button>
-
-</section>
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-    </button>
-</section>
-    <!--ap about-->
-    <section id="about" class="seccion_about" itemscope itemtype="https://schema.org/Restaurant">
-        <h2 class="visually-hidden">Contenido about</h2>
-
-        <div class="encabezado_about">
-            <figure class="linea-vertical"></figure>
-            <h2 class="titulo_seccion">Sobre nosotros</h2>
-            <h3 class="subtitulo_seccion">Nuestra historia</h3>
-        </div>
-
-        <div class="caja_about" itemprop="description">
-            <div class="texto_about">
-                <h2 class="visually-hidden">Descripción de la cafetería</h2>
-                <p>
-                    Inspirados por la cultura de las cafeterías japonesas decidimos traer
-                    un pedacito de ese mundo a nuestra ciudad.
-                </p>
-                <p>
-                    Lo que empezó como un pequeño proyecto lleno de ilusión hoy es un lugar
-                    donde cada detalle está pensado para crear experiencias únicas.
-                </p>
-                <p>
-                    Desde lattes adorables hasta dulces con formas de animales, buscamos que cada visita
-                    sea un momento especial.
-                </p>
-                <p class="texto_resaltado">
-                    En Kissaten creemos que la magia está en los pequeños detalles.
-                </p>
-            </div>
-
-            <figure class="caja_imagen_about">
-                <img src="img/about_us_foto.png" alt="Cafetería Kissaten" class="imagen_about" itemprop="photo">
-            </figure>
-
-            <div class="contenedor_eslogan">
-                <h3 style="
-                    font-family: 'Mochiy Pop One', sans-serif;
-                    font-size: 1.5rem;
-                    color: #3d2914;
-                    margin: 1rem 0 0.5rem 0;
-                    font-weight: 600;
-                    padding: 5px 10px;  
-                    border-radius: 100px; 
-                    background-color: rgb(136, 117, 78);">
-                    Nuestra filosofía
-                </h3>
-
-                <div class="caja_eslogan">
-                    <p class="texto_eslogan">
-                        Quién diría que algo tan amargo como el café podría ser tan adorablemente
-                        <span class="dulce">dulce</span>.
+                    <!-- ✅ ACCESIBILITAT: Alternativa textual al mapa per a usuaris de lector de pantalla -->
+                    <p class="text-center mt-2">
+                        <strong>Dirección:</strong> c/Los Capuchinos 35, Tarragona, 53013 |
+                        <a href="https://maps.google.com/?q=41.1188827,1.2444909"
+                           target="_blank" rel="noopener noreferrer">
+                            Ver en Google Maps
+                            <span class="visually-hidden">(s'obre en una nova pestanya)</span>
+                        </a>
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="podcast-wrapper">
-    <div class="podcast-caja">
-        <h3>Conócenos aún mejor</h3>
-        <p>Un pequeño viaje a nuestra esencia</p>
+        </section>
 
-        <audio controls>
-            <source src="audio/podcast.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-    </section>
+    </main>
+    <!-- ✅ ACCESIBILITAT: fi del main -->
 
-
-
-    <!--final about-->
-<<section id="carousel-home" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active" aria-current="true"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"></button>
-    </div>
-
-    <div class="carousel-inner">
-
-        <div class="carousel-item active" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/baos.png');"></div>
-
-            <div class="container carousel-caption-custom">
-                <h1>Bienvenidos a Kissaten</h1>
-                <p>Un pedacito de Japón en cada taza.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Ver menú</a>
-            </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/bearbuns.png');"></div>
-
-            <div class="container carousel-caption-custom">
-                <h1>Dulces Momentos</h1>
-                <p>Prueba nuestros hotcakes esponjosos estilo japonés.</p>
-                <a href="#menu-section" class="btn btn-primary btn-lg">Nuestras especialidades</a>
-            </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="5000">
-            <div class="overlay-image" style="background-image:url('img/hotcats.png');"></div>
-
-            <div class="container carousel-caption-custom">
-                <h1>El mejor Matcha</h1>
-                <p>Tradición y sabor en un ambiente único.</p>
-                <a href="#contact" class="btn btn-primary btn-lg">Visítanos</a>
-            </div>
-        </div>
-
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Siguiente</span>
-    </button>
-
-</section>
-    <!--ap contacto -->
-    <section class="py-5" id="contact">
+    <!-- FOOTER -->
+    <footer class="py-4" role="contentinfo" aria-label="Peu de pàgina de Kissaten">
         <div class="container">
-            <div class="linea-vertical"></div>
-            <h1 class="text-center mb-2">Contáctanos</h1>
-            <p class="text-center subtitulo mb-4">Estamos aquí para ti</p>
-
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="contact-caja">
-                        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"
-                            style="display:none;">
-                            <span itemprop="streetAddress">c/Los capuchinos 35</span>
-                            <span itemprop="addressLocality">Tarragona</span>
-                            <span itemprop="postalCode">53013</span>
-                            <span itemprop="addressCountry">ES</span>
-                        </div>
-                        <meta itemprop="telephone" content="863920832">
-                        <meta itemprop="email" content="kissatencafe@gmail.com">
-
-                        <form action="submit-form.php" method="POST">
-                            <fieldset class="border p-4 rounded">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="tucorreo@gmail.com">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="mensaje" class="form-label">Mensaje</label>
-                                    <textarea class="form-control" id="mensaje" rows="5"
-                                        placeholder="Escribe tu mensaje..."></textarea>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                        required>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Aceptas las <a href="politica.html" target="_blank">políticas de privacidad</a>.
-                                    </label>
-                                </div>
-                            </fieldset>
-                            <br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-5">
-                <h2 class="text-center mb-3">Te esperamos aquí</h2>
-
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.google.com/maps?q=41.1188827,1.2444909&hl=es&z=15&output=embed"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--final contacto-->
-
-    <!--ap footer-->
-    <footer class="py-4">
-        <div class="container">
-            <nav class="text-center mb-3">
+            <nav aria-label="Navegació del peu de pàgina" class="text-center mb-3">
                 <a href="#home">Home</a>
-                <a href="#menu-section">Menu</a>
-                <a href="#about">About us</a>
-                <a href="#contact">Contact us</a>
+                <a href="#menu-section">Menú</a>
+                <a href="#about">Sobre nosotros</a>
+                <a href="#contact">Contacto</a>
                 <a href="politica.html">Políticas de privacidad</a>
             </nav>
 
             <div class="row text-center mb-3">
                 <div class="col-md-6">
-                    <h3>Encuéntranos en:</h3>
-                    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                        <span itemprop="streetAddress">c/Los capuchinos 35</span>
-                    </p>
+                    <h3 class="h6">Encuéntranos en:</h3>
+                    <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">c/Los Capuchinos 35</span>,
+                        <span itemprop="addressLocality">Tarragona</span>
+                    </address>
                 </div>
 
                 <div class="col-md-6">
-                    <h3>Contáctanos en:</h3>
-                    <p><span itemprop="email">kissatencafe@gmail.com</span></p>
-                    <p><span itemprop="telephone">863 92 08 32</span></p>
+                    <h3 class="h6">Contáctanos en:</h3>
+                    <p>
+                        <a href="mailto:kissatencafe@gmail.com" itemprop="email">kissatencafe@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="tel:+34863920832" itemprop="telephone">863 92 08 32</a>
+                    </p>
                 </div>
             </div>
 
             <div class="text-center pt-3 border-top">
-                <p class="mb-0">© 2025 Kissaten. Alliumcep4</p>
+                <p class="mb-0">
+                    <small>© 2025 Kissaten. Alliumcep4. Tots els drets reservats.</small>
+                </p>
             </div>
         </div>
     </footer>
-    <!--final footer-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Kissaten",
-  "image": "https://i.postimg.cc/htsntqmK/logo-v2.png",
-  "@id": "https://i.postimg.cc/htsntqmK/logo-v2.png",
-  "url": "https://alliumcep4.github.io/kissaten_web/",
-  "telephone": "863 92 08 32",
-  "priceRange": "10-20€",
-  "servesCuisine": "Cafetería Japonesa",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "c/Los capuchinos 35",
-    "addressLocality": "Tarragona",
-    "postalCode": "53013",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.1188827,
-    "longitude": 1.2444909
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "08:00",
-    "closes": "21:30"
-  } 
-}
-</script>
-</body>
 
+    <!-- ✅ ACCESIBILITAT: Gestió de focus per al carrusel i navegació per teclat -->
+    <script>
+        // Pausar carrusel quan l'usuari interactua amb teclat
+        const carousel = document.getElementById('carousel-home');
+        if (carousel) {
+            carousel.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    bootstrap.Carousel.getInstance(carousel)?.prev();
+                }
+                if (e.key === 'ArrowRight') {
+                    bootstrap.Carousel.getInstance(carousel)?.next();
+                }
+            });
+        }
+
+        // Validació accessible del formulari
+        const form = document.querySelector('form[aria-label="Formulari de contacte"]');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                let valid = true;
+                const requiredFields = form.querySelectorAll('[aria-required="true"]');
+                requiredFields.forEach(field => {
+                    field.removeAttribute('aria-invalid');
+                    const errorId = field.id + '-error';
+                    const existingError = document.getElementById(errorId);
+                    if (existingError) existingError.remove();
+
+                    if (!field.value.trim()) {
+                        valid = false;
+                        field.setAttribute('aria-invalid', 'true');
+                        const error = document.createElement('div');
+                        error.id = errorId;
+                        error.className = 'text-danger mt-1';
+                        error.setAttribute('role', 'alert');
+                        const label = document.querySelector('label[for="' + field.id + '"]');
+                        error.textContent = 'El camp ' + (label ? label.textContent.replace('*','').trim() : field.id) + ' és obligatori.';
+                        field.parentNode.appendChild(error);
+                        field.setAttribute('aria-describedby', errorId);
+                    }
+                });
+                if (!valid) e.preventDefault();
+            });
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Kissaten",
+      "image": "https://i.postimg.cc/htsntqmK/logo-v2.png",
+      "@id": "https://alliumcep4.github.io/kissaten_web/",
+      "url": "https://alliumcep4.github.io/kissaten_web/",
+      "telephone": "+34863920832",
+      "email": "kissatencafe@gmail.com",
+      "priceRange": "10-20€",
+      "servesCuisine": "Cafetería Japonesa",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "c/Los capuchinos 35",
+        "addressLocality": "Tarragona",
+        "postalCode": "53013",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.1188827,
+        "longitude": 1.2444909
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "21:30"
+      }
+    }
+    </script>
+</body>
 </html>
